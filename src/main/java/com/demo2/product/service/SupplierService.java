@@ -32,7 +32,7 @@ public interface SupplierService {
 	 * @return
 	 */
 	@PostMapping("orm/supplier/loadSuppliers")
-	public List<Supplier> loadSuppliers(@RequestParam("ids")List<Long> ids);
+	public List<Supplier> loadSuppliers(@RequestParam("ids") String ids);
 	
 	/**
 	 * @return the list of supplier

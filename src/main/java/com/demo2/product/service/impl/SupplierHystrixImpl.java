@@ -33,12 +33,8 @@ public class SupplierHystrixImpl implements SupplierService {
 	}
 
 	@Override
-	public List<Supplier> loadSuppliers(List<Long> ids) {
+	public List<Supplier> loadSuppliers(String ids) {
 		List<Supplier> list = new ArrayList<>();
-		for(long id : ids) {
-			Supplier supplier = loadSupplier(id);
-			list.add(supplier);
-		}
 		return list;
 	}
 
