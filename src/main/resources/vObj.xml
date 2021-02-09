@@ -7,6 +7,9 @@
     <property name="unit" column="unit"></property>
     <property name="classify" column="classify"></property>
     <property name="supplier_id" column="supplier_id"></property>
+    <property name="image" column="image"></property>
+    <property name="original_price" column="original_price"></property>
+    <property name="tip" column="tip"></property>
     <ref name="supplier" refKey="supplier_id" refType="manyToOne" 
       bean="com.demo2.product.service.SupplierService" method="loadSupplier" listMethod="loadSuppliers">
     </ref>
