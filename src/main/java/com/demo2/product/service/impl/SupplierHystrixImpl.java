@@ -17,24 +17,25 @@ import com.demo2.product.service.SupplierService;
  */
 @Component
 public class SupplierHystrixImpl implements SupplierService {
+	private static Supplier DEFAULT_DATA = new Supplier((long)0, "默认供应商");
 
 	@Override
 	public Supplier loadSupplier(Long id) {
-		Supplier supplier = new Supplier();
+		Supplier supplier = (Supplier)DEFAULT_DATA.clone();
 		supplier.setId(id);
-		supplier.setName("默认供应商");
 		return supplier;
-	}
-
-	@Override
-	public List<Supplier> listOfSuppliers() {
-		List<Supplier> list = new ArrayList<>();
-		return list;
 	}
 
 	@Override
 	public List<Supplier> loadSuppliers(String ids) {
 		List<Supplier> list = new ArrayList<>();
+		if(ids==null) return list;
+		String[] idArray = ids.split(",");
+		for(String id : idArray) {
+			Supplier supplier = (Supplier)DEFAULT_DATA.clone();
+			supplier.setId(new Long(id));
+			list.add(supplier);
+		}
 		return list;
 	}
 

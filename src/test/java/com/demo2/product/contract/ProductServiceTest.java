@@ -29,7 +29,7 @@ import com.demo2.product.entity.Supplier;
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
 @AutoConfigureStubRunner(ids= {"com.demo:demo-service2-supplier:+:stubs:9004"}, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
-public class ProductContractTest {
+public class ProductServiceTest {
 	@Autowired
 	private MockMvc mvc;
 	@Test
@@ -61,7 +61,8 @@ public class ProductContractTest {
 		
 		mvc.perform(get("/orm/product/getProduct")
 				.param("id", idStr))
-		.andExpect(status().isOk());
+		.andExpect(status().isOk())
+		.andExpect(content().string(""));
 	}
 	@Test
 	public void testSaveAndDeleteWithSupplier() throws Exception {
@@ -72,7 +73,7 @@ public class ProductContractTest {
 		product.setPrice((double)8000);
 		product.setUnit("unit");
 		product.setSupplierId((long)20002);
-		product.setSupplier(new Supplier((long)20002,"默认供应商"));
+		product.setSupplier(new Supplier((long)20002,"上海晨光文具股份有限公司(M&G)"));
 		String productStr = JSONObject.toJSONString(product);
 		String idStr = Long.valueOf(id).toString();
 		

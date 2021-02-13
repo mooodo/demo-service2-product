@@ -1,0 +1,15 @@
+{
+  "id": 30001,
+  "name": "Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",
+  "price": 4000,
+  "unit": "台",
+  "supplierId": 20001,
+  "classify": "电子产品",
+  "image": "/static/img/product1.jpg",
+  "originalPrice": 5600,
+  "tip": "自营",
+  "supplier": {
+    "id": 20001,
+    "name": "默认供应商"
+  }
+}
