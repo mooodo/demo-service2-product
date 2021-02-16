@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: GIT_URL
-            value: "http://172.31.87.111:31000"
+            value: "http://demo-service-config:9000"
 
 ---
 kind: Service
