@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: demo-service2-product
-        image: 172.31.87.111:5000/demo-service2-product
+        image: repository:5000/demo-service2-product
         imagePullPolicy: Always
         env:
           - name: GIT_URL
