@@ -25,7 +25,7 @@ public class Product extends Entity<Long> {
 	
 	public Product() { super(); }
 	public Product(Long id, String name, Double price, String unit, Long supplierId,
-			Long classifyId) {
+			Long classifyId, String image, String tip) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,6 +33,8 @@ public class Product extends Entity<Long> {
 		this.unit = unit;
 		this.supplier_id = supplierId;
 		this.classify_id = classifyId;
+		this.image = image;
+		this.tip = tip;
 	}
 	/**
 	 * @return the id
