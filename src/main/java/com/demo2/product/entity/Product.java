@@ -16,22 +16,23 @@ public class Product extends Entity<Long> {
 	private Double price;
 	private String unit;
 	private Long supplier_id;
-	private String classify;
+	private Long classify_id;
 	private String image;
 	private Double original_price;
 	private String tip;
 	private Supplier supplier;
+	private Classify classify;
 	
 	public Product() { super(); }
 	public Product(Long id, String name, Double price, String unit, Long supplierId,
-			String classify) {
+			Long classifyId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.unit = unit;
 		this.supplier_id = supplierId;
-		this.classify = classify;
+		this.classify_id = classifyId;
 	}
 	/**
 	 * @return the id
@@ -96,16 +97,16 @@ public class Product extends Entity<Long> {
 		this.supplier_id = supplierId;
 	}
 	/**
-	 * @return the classify
+	 * @return the classifyId
 	 */
-	public String getClassify() {
-		return classify;
+	public Long getClassifyId() {
+		return classify_id;
 	}
 	/**
-	 * @param classify the classify to set
+	 * @param classifyId the classifyId to set
 	 */
-	public void setClassify(String classify) {
-		this.classify = classify;
+	public void setClassifyId(Long classifyId) {
+		this.classify_id = classifyId;
 	}
 	/**
 	 * @return the image
@@ -154,6 +155,18 @@ public class Product extends Entity<Long> {
 	 */
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
+	}
+	/**
+	 * @return the classify
+	 */
+	public Classify getClassify() {
+		return classify;
+	}
+	/**
+	 * @param classify the classify to set
+	 */
+	public void setClassify(Classify classify) {
+		this.classify = classify;
 	}
 	
 }
