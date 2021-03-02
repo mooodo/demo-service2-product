@@ -13,6 +13,7 @@ public class Classify extends Entity<Long> {
 	private Long id;
 	private String name;
 	private Long parent_id;
+	private Integer layer;
 
 	@Override
 	public Long getId() {
@@ -50,6 +51,20 @@ public class Classify extends Entity<Long> {
 	 */
 	public void setParentId(Long parentId) {
 		this.parent_id = parentId;
+	}
+
+	/**
+	 * @return the layer
+	 */
+	public Integer getLayer() {
+		return layer;
+	}
+
+	/**
+	 * @param layer the layer to set
+	 */
+	public void setLayer(Integer layer) {
+		this.layer = layer;
 	}
 
 }

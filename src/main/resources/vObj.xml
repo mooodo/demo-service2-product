@@ -19,5 +19,6 @@
   	<property name="id" column="id" isPrimaryKey="true"></property>
     <property name="name" column="name"></property>
     <property name="parent_id" column="parent_id"></property>
+    <property name="layer" column="layer"></property>
   </vo>
 </vobjs>
