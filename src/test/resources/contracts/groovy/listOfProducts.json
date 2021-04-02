@@ -1,0 +1,40 @@
+[{
+  "id": 30001,
+  "name": "Apple iPhone X 256GB 深空灰色 移动联通电信4G手机",
+  "price": 4000,
+  "unit": "台",
+  "supplierId": 20004,
+  "classifyId": 100100,
+  "image": "/static/img/product1.jpg",
+  "originalPrice": 5600,
+  "tip": "自营",
+  "supplier": {
+    "id": 20004,
+    "name": "默认供应商"
+  },
+  "classify": {
+    "id": 100100,
+    "name": "智能手机",
+    "parentId": 100000
+  }
+},
+{
+  "id": 30002,
+  "name": "Apple iPad 平板电脑 2018年新款9.7英寸",
+  "price": 12600,
+  "unit": "台",
+  "supplierId": 20004,
+  "classifyId": 100200,
+  "image": "/static/img/product2.jpg",
+  "originalPrice": 13000,
+  "tip": "优惠",
+  "supplier": {
+    "id": 20004,
+    "name": "默认供应商"
+  },
+  "classify": {
+    "id": 100200,
+    "name": "平板电脑",
+    "parentId": 100000
+  }
+}]

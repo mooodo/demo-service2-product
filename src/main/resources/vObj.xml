@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vobjs>
+  <vo class="com.demo2.product.entity.Product" tableName="Product">
+    <property name="id" column="id" isPrimaryKey="true"></property>
+    <property name="name" column="name"></property>
+    <property name="price" column="price"></property>
+    <property name="unit" column="unit"></property>
+    <property name="classify_id" column="classify_id"></property>
+    <property name="supplier_id" column="supplier_id"></property>
+    <property name="image" column="image"></property>
+    <property name="original_price" column="original_price"></property>
+    <property name="tip" column="tip"></property>
+    <join name="classify" joinKey="classify_id" joinType="manyToOne" class="com.demo2.product.entity.Classify"></join>
+    <ref name="supplier" refKey="supplier_id" refType="manyToOne" 
+      bean="com.demo2.product.service.SupplierService" method="loadSupplier" listMethod="loadSuppliers">
+    </ref>
+  </vo>
+  <vo class="com.demo2.product.entity.Classify" tableName="Classify">
+  	<property name="id" column="id" isPrimaryKey="true"></property>
+    <property name="name" column="name"></property>
+    <property name="parent_id" column="parent_id"></property>
+    <property name="layer" column="layer"></property>
+  </vo>
+</vobjs>

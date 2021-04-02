@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app: demo-service2-product
+  name: demo-service2-product 
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-service2-product
+  template:
+    metadata:
+      name: demo-service2-product
+      labels:
+        app: demo-service2-product
+    spec:
+      containers:
+      - name: demo-service2-product
+        image: repository:5000/demo-service2-product
+        imagePullPolicy: Always
+        env:
+          - name: GIT_URL
+            value: "http://demo-service-config:9000"
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: demo-service2-product
+  name: demo-service2-product
+  namespace: default
+spec:
+  ports:
+  - port: 9003 
+    targetPort: 9003
+  selector:
+    app: demo-service2-product

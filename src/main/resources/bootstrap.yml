@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: service-product
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  mapperLocations: classpath*:mapper/*Mapper.xml
+feign:
+  hystrix:
+    enabled: true
+logging:
+  level:
+    com.demo2.product: DEBUG
+    com.demo2.support: DEBUG
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: ${GIT_URL:http://localhost:9000}
+      failFast: false
+  sleuth:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://master:32306/product?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: product
+    password: product1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 0
+    host: master
+    port: 31379
+    password: 
+    pool:
+      maxActive: 200
+      maxWait: -1
+      maxIdel: 10
+      minIdel: 0
+    timeout: 1000
+server:
+  port: 9003
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: ${GIT_URL}
+      failFast: true
+server:
+  port: ${SERVICE_PORT:9003}
