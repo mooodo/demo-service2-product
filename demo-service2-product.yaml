@@ -16,6 +16,16 @@ spec:
       labels:
         app: demo-service2-product
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - demo-service2-product
+              topologyKey: "kubernetes.io/hostname"
       containers:
       - name: demo-service2-product
         image: repository:5000/demo-service2-product
@@ -23,7 +33,10 @@ spec:
         env:
           - name: GIT_URL
             value: "http://demo-service-config:9000"
-
+          - name: SW_AGENT_NAME
+            value: "demo-service2-product"
+          - name: SW_AGENT_COLLECTOR_BACKEND_SERVICES
+            value: "skywalking:11800"
 ---
 kind: Service
 apiVersion: v1
