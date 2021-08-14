@@ -28,7 +28,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
       - name: demo-service2-product
-        image: repository:5000/demo-service2-product
+        image: repository:5000/demo-service2-product:<VERSION>
         imagePullPolicy: Always
         env:
           - name: GIT_URL
