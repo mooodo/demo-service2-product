@@ -19,14 +19,14 @@ import com.demo2.product.service.impl.SupplierHystrixImpl;
 @FeignClient(value="service-supplier", fallback=SupplierHystrixImpl.class)
 public interface SupplierService {
 	/**
-	 * @param id
+	 * @param id the id of the supplier
 	 * @return the supplier
 	 */
 	@GetMapping("orm/supplier/loadSupplier")
 	public Supplier loadSupplier(@RequestParam("id")Long id);
 	/**
-	 * @param ids
-	 * @return
+	 * @param ids the list of ids of suppliers
+	 * @return the list of suppliers by ids
 	 */
 	@GetMapping("orm/supplier/loadSuppliers")
 	public List<Supplier> loadSuppliers(@RequestParam("ids") String ids);

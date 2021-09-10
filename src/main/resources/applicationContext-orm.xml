@@ -9,6 +9,6 @@
 	>
 	<description>The application context for orm</description>
 	<bean id="product" class="com.demo2.product.service.impl.ProductServiceImpl">
-		<property name="dao" ref="repositoryWithCache"></property>
+		<property name="dao" ref="repositoryWithCache"/>
 	</bean>
 </beans>
